@@ -1,45 +1,88 @@
 ---
+const formats = [
+  {
+    title: 'Themed Events',
+    frequency: 'Every 4–6 weeks',
+    description: 'Workshops, panels, and debates that sharpen a specific skill or judgement around giving.',
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>`,
+    accent: 'bg-primary-500',
+    accentLight: 'bg-primary-50 text-primary-600',
+  },
+  {
+    title: 'Strategy Sprints',
+    frequency: 'Quarterly',
+    description: 'Dedicated time for serious reflection on your giving.',
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>`,
+    accent: 'bg-accent-500',
+    accentLight: 'bg-accent-50 text-accent-600',
+  },
+  {
+    title: 'Monthly Socials',
+    frequency: 'Monthly',
+    description: 'Relaxed gatherings to connect with others who share your values.',
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+    accent: 'bg-primary-600',
+    accentLight: 'bg-primary-50 text-primary-600',
+  },
+];
 ---
 
-<section id="events" class="py-24 sm:py-32 bg-white">
+<section id="events" class="py-24 sm:py-32 bg-slate-50">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <!-- Left: text -->
-      <div class="lg:sticky lg:top-32">
-        <span class="text-sm font-semibold text-accent-500 uppercase tracking-widest">Events</span>
-        <h2 class="mt-4 font-display text-4xl sm:text-5xl text-slate-900 leading-tight">
-          What's coming up.
-        </h2>
-        <p class="mt-5 text-lg text-slate-600 leading-relaxed">
-          We gather regularly across London — in venues, parks, and wherever good conversation happens. Find an event that fits and come along. First-timers are always welcome.
-        </p>
-        <a
-          href="https://luma.com/calendar/cal-y1kIXdGOliIqTu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex items-center gap-2 mt-8 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
-        >
-          View full calendar
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </div>
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="text-sm font-semibold text-accent-500 uppercase tracking-widest">Events</span>
+      <h2 class="mt-4 font-display text-4xl sm:text-5xl text-slate-900 leading-tight">
+        What's coming up.
+      </h2>
+      <p class="mt-5 text-lg text-slate-600 leading-relaxed">
+        We have a regular schedule of events both themed and social, come along! First timers always welcome.
+      </p>
+    </div>
 
-      <!-- Right: Luma embed -->
-      <div class="relative">
-        <div class="rounded-2xl overflow-hidden bg-white shadow-lg shadow-slate-200/50 border border-slate-100">
-          <iframe
-            src="https://luma.com/embed/calendar/cal-y1kIXdGOliIqTu8/events"
-            width="600"
-            height="500"
-            frameborder="0"
-            style="border: 0;"
-            class="w-full"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
+    <!-- Event format cards -->
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {formats.map((format) => (
+        <div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 hover:border-slate-200 hover:-translate-y-1">
+          <div class:list={["inline-flex items-center justify-center w-14 h-14 rounded-2xl", format.accentLight]}>
+            <Fragment set:html={format.icon} />
+          </div>
+
+          <h3 class="mt-6 text-xl font-bold text-slate-900">{format.title}</h3>
+          <span class="inline-block mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">{format.frequency}</span>
+          <p class="mt-4 text-slate-600 leading-relaxed">{format.description}</p>
+
+          <div class:list={["absolute bottom-0 left-8 right-8 h-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500", format.accent]}></div>
         </div>
+      ))}
+    </div>
+
+    <!-- Luma calendar embed -->
+    <div class="mt-16 flex justify-center">
+      <div class="w-full max-w-[640px] rounded-2xl overflow-hidden bg-white shadow-lg shadow-slate-200/50 border border-slate-100">
+        <iframe
+          src="https://luma.com/embed/calendar/cal-y1kIXdGOliIqTu8/events?lt=light"
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border: 1px solid #bfcbda88; border-radius: 4px;"
+          class="w-full"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
       </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a
+        href="https://luma.com/calendar/cal-y1kIXdGOliIqTu8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+      >
+        View full calendar
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
     </div>
   </div>
 </section>
