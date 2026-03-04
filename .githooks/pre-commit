@@ -14,11 +14,17 @@ for img in $STAGED_IMAGES; do
 done
 echo ""
 
-# Redirect stdin from the terminal so the prompt works inside a git hook
-exec < /dev/tty
-printf "Compress images before committing? [y/N] "
-read CONFIRM
-echo ""
+# Only prompt if we have an interactive terminal
+if [ -t 1 ] && [ -c /dev/tty ]; then
+  exec < /dev/tty
+  printf "Compress images before committing? [y/N] "
+  read CONFIRM
+  echo ""
+else
+  echo "No interactive terminal — skipping compression prompt."
+  echo ""
+  exit 0
+fi
 
 case "$CONFIRM" in
   y|Y)

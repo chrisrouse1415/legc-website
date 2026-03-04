@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const organizers = [
+  {
+    name: 'Chris Rouse',
+    photo: '/images/organizer-chris.jpg',
+    bio: 'Chris has been interested in effective giving for over a decade and signed the 10% pledge in 2021. He has been organising effective giving events in London since 2023. By day he\'s a systems engineer in telecoms and enjoys a good bike ride.',
+  },
+  {
+    name: 'Lorenzo Fonce-Pong',
+    photo: null,
+    bio: 'Bio coming soon.',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Team | London Effective Giving Community"
+  description="Meet the people behind the London Effective Giving Community."
+>
+  <Navbar subpage={true} />
+
+  <main id="main-content">
+    <!-- Header -->
+    <div class="bg-primary-950 pt-32 pb-16 text-center">
+      <p class="text-sm font-semibold text-accent-400 uppercase tracking-widest">The people behind LEGC</p>
+      <h1 class="mt-4 font-display text-4xl sm:text-5xl text-white">Our Team</h1>
+      <p class="mt-5 text-lg text-white/60 max-w-xl mx-auto px-5">
+        We're a small volunteer team passionate about making effective giving more visible in London.
+      </p>
+    </div>
+
+    <!-- Organizer cards -->
+    <section class="bg-white py-20 sm:py-28">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          {organizers.map((person) => (
+            <div class="flex flex-col items-center text-center">
+              <div class="w-36 h-36 rounded-full overflow-hidden bg-slate-100 ring-4 ring-white shadow-lg">
+                {person.photo ? (
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    class="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center bg-primary-50">
+                    <svg class="w-16 h-16 text-primary-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <h2 class="mt-5 font-display text-2xl text-slate-900">{person.name}</h2>
+              <p class="mt-1 text-sm font-semibold text-accent-500 uppercase tracking-wider">Co-organiser</p>
+              <p class="mt-4 text-slate-600 leading-relaxed">{person.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer subpage={true} />
+</BaseLayout>

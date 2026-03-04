@@ -1,10 +1,16 @@
 ---
+interface Props {
+  subpage?: boolean;
+}
+const { subpage = false } = Astro.props;
+const base = subpage ? '/' : '';
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#events', label: 'Events' },
-  { href: '#gallery', label: 'Gallery' },
+  { href: `${base}#about`, label: 'About' },
+  { href: `${base}#events`, label: 'Events' },
+  { href: `${base}#gallery`, label: 'Gallery' },
+  { href: '/team', label: 'Team' },
 ];
 ---
 

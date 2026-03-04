@@ -1,15 +1,21 @@
 ---
+interface Props {
+  subpage?: boolean;
+}
+const { subpage = false } = Astro.props;
+const base = subpage ? '/' : '';
+
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#events', label: 'Events' },
-  { href: '#gallery', label: 'Gallery' },
+  { href: `${base}#about`, label: 'About' },
+  { href: `${base}#events`, label: 'Events' },
+  { href: `${base}#gallery`, label: 'Gallery' },
 ];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-40 transition-all duration-300" id="main-nav" aria-label="Main navigation">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
     <div class="flex items-center justify-between h-18 py-4">
-      <a href="#" class="flex items-center gap-3 group">
+      <a href={subpage ? '/' : '#'} class="flex items-center gap-3 group">
         <img src="/images/logo.png" alt="" class="w-8 h-8 rounded-sm" />
         <span class="text-lg font-semibold text-white tracking-wide">LEGC</span>
       </a>
@@ -27,6 +33,13 @@ const navLinks = [
               </a>
             </li>
           ))}
+          {subpage && (
+            <li>
+              <span class="text-sm text-white font-medium tracking-wide uppercase border-b border-white/50 pb-px">
+                Team
+              </span>
+            </li>
+          )}
         </ul>
         <a
           href="https://luma.com/calendar/cal-y1kIXdGOliIqTu8"
@@ -70,6 +83,13 @@ const navLinks = [
           </a>
         </li>
       ))}
+      {subpage && (
+        <li>
+          <span class="block px-4 py-3 text-white font-semibold text-sm uppercase tracking-wide">
+            Team
+          </span>
+        </li>
+      )}
       <li class="pt-2">
         <a
           href="https://luma.com/calendar/cal-y1kIXdGOliIqTu8"
