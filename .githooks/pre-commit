@@ -1,0 +1,35 @@
+#!/bin/sh
+# Detect staged images and offer to compress them before committing.
+
+STAGED_IMAGES=$(git diff --cached --name-only | grep -iE '\.(jpg|jpeg|png|webp)$')
+
+if [ -z "$STAGED_IMAGES" ]; then
+  exit 0
+fi
+
+echo ""
+echo "Staged images:"
+for img in $STAGED_IMAGES; do
+  echo "  $img"
+done
+echo ""
+
+# Redirect stdin from the terminal so the prompt works inside a git hook
+exec < /dev/tty
+printf "Compress images before committing? [y/N] "
+read CONFIRM
+echo ""
+
+case "$CONFIRM" in
+  y|Y)
+    node scripts/compress-staged-images.mjs $STAGED_IMAGES
+    for img in $STAGED_IMAGES; do
+      git add "$img"
+    done
+    echo ""
+    ;;
+  *)
+    echo "Skipping compression."
+    echo ""
+    ;;
+esac
