@@ -7,10 +7,8 @@ const base = subpage ? '/' : '';
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { href: `${base}#about`, label: 'About' },
-  { href: `${base}#events`, label: 'Events' },
-  { href: `${base}#gallery`, label: 'Gallery' },
-  { href: '/team', label: 'Team' },
+  { href: subpage ? '/' : '#', label: 'About' },
+  { href: '/get-involved', label: 'Get Involved' },
 ];
 ---
 
