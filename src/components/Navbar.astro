@@ -16,25 +16,17 @@ const { subpage = false } = Astro.props;
       <!-- Desktop nav -->
       <ul class="hidden md:flex items-center gap-8">
         <li>
-          <a
-            href={subpage ? '/' : '#'}
-            class="text-sm text-white/70 hover:text-white font-medium tracking-wide uppercase transition-colors duration-200"
-          >
-            About
-          </a>
+          {subpage ? (
+            <a href="/" class="text-sm text-white/70 hover:text-white font-medium tracking-wide uppercase transition-colors duration-200">About</a>
+          ) : (
+            <span class="text-sm text-white font-medium tracking-wide uppercase border-b border-white/50 pb-px">About</span>
+          )}
         </li>
         <li>
           {subpage ? (
-            <span class="text-sm text-white font-medium tracking-wide uppercase border-b border-white/50 pb-px">
-              Get Involved
-            </span>
+            <span class="text-sm text-white font-medium tracking-wide uppercase border-b border-white/50 pb-px">Get Involved</span>
           ) : (
-            <a
-              href="/get-involved"
-              class="text-sm text-white/70 hover:text-white font-medium tracking-wide uppercase transition-colors duration-200"
-            >
-              Get Involved
-            </a>
+            <a href="/get-involved" class="text-sm text-white/70 hover:text-white font-medium tracking-wide uppercase transition-colors duration-200">Get Involved</a>
           )}
         </li>
       </ul>
@@ -62,25 +54,17 @@ const { subpage = false } = Astro.props;
   <div id="mobile-menu" class="hidden md:hidden bg-primary-900/95 backdrop-blur-lg border-t border-white/10">
     <ul class="px-5 py-4 space-y-1">
       <li>
-        <a
-          href={subpage ? '/' : '#'}
-          class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide"
-        >
-          About
-        </a>
+        {subpage ? (
+          <a href="/" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">About</a>
+        ) : (
+          <span class="block px-4 py-3 text-white font-semibold text-sm uppercase tracking-wide">About</span>
+        )}
       </li>
       <li>
         {subpage ? (
-          <span class="block px-4 py-3 text-white font-semibold text-sm uppercase tracking-wide">
-            Get Involved
-          </span>
+          <span class="block px-4 py-3 text-white font-semibold text-sm uppercase tracking-wide">Get Involved</span>
         ) : (
-          <a
-            href="/get-involved"
-            class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide"
-          >
-            Get Involved
-          </a>
+          <a href="/get-involved" class="mobile-nav-link block px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">Get Involved</a>
         )}
       </li>
     </ul>
