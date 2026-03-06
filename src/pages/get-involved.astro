@@ -119,65 +119,35 @@ const roles = [
           ))}
         </div>
         <p class="mt-10 text-center text-sm text-slate-400">
-          If you're interested, <a href="#contact" class="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2 transition-colors">drop us a message below.</a>
+          If you're interested, <a href="/contact" class="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2 transition-colors">drop us a message below.</a>
         </p>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 sm:py-28 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+    <section class="py-20 sm:py-28 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
-          <!-- Contact form -->
-          <div>
-            <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Get in touch</h2>
-            <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-              Have a question or want to get involved? Send us a message and we'll get back to you.
-            </p>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              class="mt-8 space-y-5"
-              aria-label="Contact form"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="hidden">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          <!-- Get in touch -->
+          <div class="flex flex-col justify-center">
+            <div class="bg-primary-950 rounded-2xl p-10 text-center">
+              <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent-500/20 mb-6">
+                <svg class="w-7 h-7 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              </div>
+              <h2 class="font-display text-2xl sm:text-3xl text-white">Get in touch</h2>
+              <p class="mt-4 text-white/60 leading-relaxed">
+                Have a question or want to get involved? We'd love to hear from you.
               </p>
-              <div>
-                <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Name</label>
-                <input
-                  type="text" id="name" name="name" required
-                  class="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
-                <input
-                  type="email" id="email" name="email" required
-                  class="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-colors"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div>
-                <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
-                <textarea
-                  id="message" name="message" rows="5" required
-                  class="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-colors resize-y"
-                  placeholder="Tell us how you'd like to get involved..."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors shadow-sm"
+              <a
+                href="/contact"
+                class="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-400 text-white font-semibold transition-all duration-200 shadow-md shadow-accent-500/20 hover:shadow-lg hover:shadow-accent-500/30 hover:-translate-y-px"
               >
-                Send message
-              </button>
-            </form>
+                Send us a message
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <p class="mt-4 text-white/30 text-xs">We'll get back to you</p>
+            </div>
           </div>
 
           <!-- Submit an event idea -->
@@ -188,7 +158,7 @@ const roles = [
               </div>
               <h2 class="font-display text-2xl sm:text-3xl text-white">Got an event idea?</h2>
               <p class="mt-4 text-white/60 leading-relaxed">
-                Have a topic, format, or speaker in mind? We'd love to hear it. Submit your idea and we'll be in touch.
+                Have a topic, format, or speaker in mind? We'd love to hear it.
               </p>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSea50kmW7YYW5bCWd1Uyn-po8_bOOa1r17fvFWmmdok10kBQA/viewform?usp=publish-editor"
