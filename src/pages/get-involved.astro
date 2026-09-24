@@ -2,16 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import chrisPhoto from '../assets/images/organizer-chris.jpg';
+import lorenzoPhoto from '../assets/images/organizer-lorenzo.jpg';
 
 const organizers = [
   {
     name: 'Chris Rouse',
-    photo: '/images/organizer-chris.jpg',
+    photo: chrisPhoto,
     bio: 'Chris has been interested in effective giving for over a decade and signed the 🔸 10% pledge in 2021. He has been organising effective giving events in London since 2023. By day he\'s a systems engineer in telecoms and enjoys a good bike ride.',
   },
   {
     name: 'Lorenzo Fong Ponce',
-    photo: '/images/organizer-lorenzo.jpg',
+    photo: lorenzoPhoto,
     bio: 'Lorenzo is a 🔸 10% Pledger on a mission to become one of Earth\'s best advocates for effective giving. Reach out for a link to his personal EG strategy doc! He has a day job as a strategy and operations manager at Amazon, and cares about how professionals can use their charitable giving and influence to do more good.',
   },
 ];
@@ -39,7 +42,7 @@ const roles = [
   title="Get Involved | London Effective Giving Community"
   description="Meet the organisers, volunteer with us, or get in touch with the London Effective Giving Community."
 >
-  <Navbar subpage={true} />
+  <Navbar current="get-involved" />
 
   <main id="main-content">
 
@@ -78,9 +81,10 @@ const roles = [
             <div class="flex flex-col items-center text-center">
               <div class="w-44 h-44 rounded-full overflow-hidden bg-slate-100 ring-4 ring-white shadow-lg shrink-0">
                 {person.photo ? (
-                  <img
+                  <Image
                     src={person.photo}
                     alt={person.name}
+                    width={352}
                     class="w-full h-full object-cover"
                   />
                 ) : (

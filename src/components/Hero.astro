@@ -1,14 +1,19 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/event-2.jpg';
 ---
 
 <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0">
-    <img
-      src="/images/event-2.jpg"
+    <Image
+      src={heroImage}
       alt=""
+      widths={[640, 1024, 1600, 2400]}
+      sizes="100vw"
       class="w-full h-full object-cover object-top"
       loading="eager"
+      fetchpriority="high"
     />
     <!-- Gradient overlays for depth -->
     <div class="absolute inset-0 bg-gradient-to-b from-primary-950/85 via-primary-900/70 to-primary-950/90"></div>

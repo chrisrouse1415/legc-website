@@ -1,19 +1,35 @@
 ---
+import { Image } from 'astro:assets';
+import event2 from '../assets/images/event-2.jpg';
+import event11 from '../assets/images/event-11.jpg';
+import event10 from '../assets/images/event-10.jpg';
+import event8 from '../assets/images/event-8.jpg';
+import event9 from '../assets/images/event-9.jpg';
+import event3 from '../assets/images/event-3.jpg';
+import event12 from '../assets/images/event-12.jpg';
+import event4 from '../assets/images/event-4.jpg';
+import event6 from '../assets/images/event-6.jpg';
+import event5 from '../assets/images/event-5.jpg';
+import event13 from '../assets/images/event-13.jpg';
+import event14 from '../assets/images/event-14.jpg';
+import event1 from '../assets/images/event-1.jpg';
+import event15 from '../assets/images/event-15.jpg';
+
 const images = [
-  { src: '/images/event-2.jpg',  alt: 'Meetup at Newspeak House' },
-  { src: '/images/event-11.jpg', alt: 'Social at Seven Dials Market' },
-  { src: '/images/event-10.jpg', alt: 'Denise Melchin on Earning to Give' },
-  { src: '/images/event-8.jpg',  alt: 'Chris Rouse on the future of EA & giving' },
-  { src: '/images/event-9.jpg',  alt: 'Member with a GWWC pledge certificate', position: 'object-[center_20%]' },
-  { src: '/images/event-3.jpg',  alt: 'Summer Picnic' },
-  { src: '/images/event-12.jpg', alt: 'Quarterly Co-working session' },
-  { src: '/images/event-4.jpg',  alt: 'Social at Newspeak House' },
-  { src: '/images/event-6.jpg',  alt: 'Pub Social' },
-  { src: '/images/event-5.jpg',  alt: 'Pub Social' },
-  { src: '/images/event-13.jpg', alt: 'Talk on founding and funding effective charities' },
-  { src: '/images/event-14.jpg', alt: 'Effective animal charities event' },
-  { src: '/images/event-1.jpg',  alt: 'Summer Picnic' },
-  { src: '/images/event-15.jpg', alt: 'Effective giving debate' },
+  { src: event2, alt: 'Meetup at Newspeak House' },
+  { src: event11, alt: 'Social at Seven Dials Market' },
+  { src: event10, alt: 'Denise Melchin on Earning to Give' },
+  { src: event8, alt: 'Chris Rouse on the future of EA & giving' },
+  { src: event9, alt: 'Member with a GWWC pledge certificate', position: 'object-[center_20%]' },
+  { src: event3, alt: 'Summer Picnic' },
+  { src: event12, alt: 'Quarterly Co-working session' },
+  { src: event4, alt: 'Social at Newspeak House' },
+  { src: event6, alt: 'Pub Social' },
+  { src: event5, alt: 'Pub Social' },
+  { src: event13, alt: 'Talk on founding and funding effective charities' },
+  { src: event14, alt: 'Effective animal charities event' },
+  { src: event1, alt: 'Summer Picnic' },
+  { src: event15, alt: 'Effective giving debate' },
 ];
 ---
 
@@ -27,9 +43,11 @@ const images = [
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
       {[...images].reverse().map((image) => (
         <div class="group relative overflow-hidden rounded-2xl shadow-sm aspect-[4/3]">
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
+            widths={[400, 800]}
+            sizes="(min-width: 1024px) 400px, 50vw"
             class={`w-full h-full object-cover ${image.position ?? 'object-center'} transition-transform duration-500 ease-out group-hover:scale-[1.03]`}
             loading="lazy"
           />
