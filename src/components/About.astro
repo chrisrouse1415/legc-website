@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/event-10.jpg';
 ---
 
 <section id="about" class="py-24 sm:py-32 bg-white overflow-hidden">
@@ -51,9 +53,11 @@
       <!-- Image -->
       <div class="relative">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/10">
-          <img
-            src="/images/event-10.jpg"
+          <Image
+            src={aboutImage}
             alt="Talk on earning to give"
+            widths={[480, 800, 1200]}
+            sizes="(min-width: 1024px) 600px, 100vw"
             class="w-full aspect-[4/3] object-cover"
             loading="lazy"
           />
